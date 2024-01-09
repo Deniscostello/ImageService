@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
+@Document
 public class Image {
 
     @NotBlank(message = "Title cannot be blank")
