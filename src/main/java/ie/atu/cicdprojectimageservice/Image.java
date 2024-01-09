@@ -5,16 +5,64 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
+
 @NoArgsConstructor
 public class Image {
+
     @NotBlank(message = "Title cannot be blank")
     private String title;
-
     @NotBlank(message = "Description cannot be blank")
     private String description;
 
     @NotBlank(message = "URL cannot be blank")
     private String url;
+
+    public Image(String title, String description, String url){
+        setTitle(title);
+        setDescription(description);
+        setUrl(url);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        if(title.length() >= 3){
+            title = title;
+        }
+        else{
+            throw new IllegalArgumentException("Title must be a minimum of 3 characters");
+        }
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        if(description.length() >= 5){
+            description = description;
+        }
+        else{
+            throw new IllegalArgumentException("Description must be a minimum of 5 characters");
+        }
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        if(url.length() >= 10){
+            url = url;
+        }
+        else{
+            throw new IllegalArgumentException("URL must be a minimum of 10 characters");
+        }
+        this.url = url;
+
+    }
 }
