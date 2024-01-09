@@ -9,6 +9,11 @@ import java.util.Map;
 
 @RestController
 public class ImageController {
+    private final ImageService imageService;
+
+    public ImageController(ImageService imageService) {
+        this.imageService = imageService;
+    }
 
     @PostMapping("addImage")
     public ResponseEntity<Map<String, List<Image>>> saveImage(){
