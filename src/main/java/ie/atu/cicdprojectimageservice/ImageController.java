@@ -17,7 +17,7 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @PostMapping("addImage")
+    @PostMapping("/addImage")
     public String saveImage(@RequestBody Image image){
         imageService.addImage(image);
         return "Image saved";
