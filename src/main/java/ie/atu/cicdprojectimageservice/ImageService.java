@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ImageService {
 
-    public String addImage(Image image){
-        return "Image" + image + "saved";
+    public void addImage(Image image){
+        System.out.println("Image" + image + "saved");
     }
 }
