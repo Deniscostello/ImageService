@@ -1,0 +1,58 @@
+version: "3"
+services:
+  imageservicemongodb:
+    container_name: "imageservicemongodb"
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - project-network
+
+  cicd-next-frontend:
+    container_name: "cicd-frontend"
+    image: "cicd-project-frontend:latest"
+    ports:
+      - 3000:3000
+    networks:
+      - project-network
+
+  springboot-imageservice:
+    container_name: "springboot-imageservice"
+    image: springboot-imageservice:2.1
+    ports:
+      - 8080:8080
+    networks:
+      - project-network
+
+  springboot-userservice:
+    container_name: "spring-userservice"
+    image: springboot-userservice:2.0
+    ports:
+      - 8081:8081
+    networks:
+      - project-network
+
+  springboot-registrationservice:
+    container_name: "spring-registrationservice"
+    image: springboot-registrationservice:1.1
+    ports:
+      - 8082:8082
+    networks:
+      - project-network
+
+  springboot-emailservice:
+    container_name: "spring-emailservice"
+    image: springboot-emailservice:1.1
+    ports:
+      - 8083:8083
+    networks:
+      - project-network
+
+
+networks:
+  project-network:
+    driver: bridge
+
+
+
+
