@@ -18,15 +18,16 @@ public class Image {
     @Id
     private ObjectId _id;
 
-    public long getImageid() {
-        return Imageid;
+
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setImageid(long imageid) {
-        Imageid = imageid;
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 
-    private long Imageid;
+    private int imageId;
 
 
     @NotBlank(message = "Title cannot be blank")

@@ -8,9 +8,17 @@ services:
     networks:
       - project-network
 
+  cicd-next-frontend:
+    container_name: "cicd-frontend"
+    image: "cicd-project-frontend:latest"
+    ports:
+      - 3000:3000
+    networks:
+      - project-network
+
   springboot-imageservice:
     container_name: "springboot-imageservice"
-    image: springboot-imageservice:1.2
+    image: springboot-imageservice:2.1
     ports:
       - 8080:8080
     networks:
@@ -18,7 +26,7 @@ services:
 
   springboot-userservice:
     container_name: "spring-userservice"
-    image: springboot-userservice:1.4
+    image: springboot-userservice:2.0
     ports:
       - 8081:8081
     networks:
